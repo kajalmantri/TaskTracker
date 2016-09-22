@@ -1,0 +1,39 @@
+#container {
+    width: 60%;
+    height: 80%;
+    border: 2px solid black;
+    margin: auto;
+}
+
+#formDiv {
+    width: 48%;
+    border: 1px solid gray;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    float: left;
+}
+
+#jsonDiv {
+    width: 48%;
+    border: 1px solid black;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    float: right;
+}
+
+.clearFix {
+    clear: both;
+}
+
+h3.heading {
+    font-weight: bolder;
+}
+
+#jsonData {
+    width: 95%;
+    border: 1px solid gray;
+    background: white;
+    padding: 15px;
+}

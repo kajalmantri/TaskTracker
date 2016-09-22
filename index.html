@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="taskTracker">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task Tracker</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="container" ng-controller="TaskTrackerController as task">
+        <div class="jumbotron">
+            <header>
+                <h3 class="heading">Task Tracker</h3>
+                <p>v2.0</p>
+            </header>
+            <div id="formDiv">
+                <form role="form" ng-submit="task.addTask();">
+                    <div class="form-group">
+                        <label for="name">Task name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Name" ng-model="task.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="text" class="form-control" id="date" placeholder="Enter Date" ng-model="task.date">
+                    </div>
+                    <div class="form-group">
+                        <label for="assign">Assign To:</label>
+                        <input type="text" class="form-control" id="assign" placeholder="Assign for" ng-model="task.assigned">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+            <div id="jsonDiv">
+                <h3 class="heading">Existing Task</h3>
+                
+                	<table>
+                	<tbody>
+                		<tr ng-repeat="extask in task.tasksList">
+                			<td ngbind="extask.name"></td>
+                			<td ngbind="extask.date"></td>
+                			<td ngbind="extask.assigned"></td>
+                		</tr></tbody>
+                	</table>
+                
+            </div>
+            <div class="clearFix"></div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/TaskTrackerController.js"></script>
+    <!-- <script src="js/jsonService.js"></script> -->
+</body>
+
+</html>
